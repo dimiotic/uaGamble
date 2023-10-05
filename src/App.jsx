@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ErrorPage, HomePage, CasinoPage } from './pages';
 import { Navbar } from './components';
+import styled from 'styled-components';
 
 function App() {
   return (

@@ -9,7 +9,10 @@ function App() {
   const { i18n } = useTranslation();
   useEffect(() => {
     const lng = navigator.language;
-    i18n.changeLanguage(lng);
+    if (lng === 'uk') i18n.changeLanguage(lng);
+    else {
+      i18n.changeLanguage('ru');
+    }
   }, [i18n]);
   return (
     <BrowserRouter>

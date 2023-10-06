@@ -5,7 +5,7 @@ const HomePage = () => {
   const nav = useNavigate();
   useEffect(() => {
     nav('/casino');
-  }, []);
+  }, [nav]);
   return <div>HomePage</div>;
 };
 

@@ -74,11 +74,11 @@ const NavbarWrapper = styled.div`
         border: 0;
         margin: 3px;
         transition: color 0.2s ease;
-        font-size: 15px;
+        font-size: 26px;
         background-color: transparent;
       }
       .active {
-        color: #a60311;
+        color: #df0b1d;
       }
     }
   }

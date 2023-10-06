@@ -28,6 +28,6 @@ const Wrapper = styled.div`
 
   span {
     margin: 5px;
-    color: #a60311;
+    color: #ec1f30;
   }
 `;

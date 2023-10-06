@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Stars from './Stars';
 import { FaCheckCircle } from 'react-icons/fa';
+import { useThemeContext } from '../context/ThemeContext';
 const RatingItem = ({ data }) => {
   const { name, bonuses, url, license, rate, image_url } = data;
+  const { themeLight } = useThemeContext();
+
   return (
-    <RatingItemWrapper>
+    <RatingItemWrapper themeLight={themeLight}>
       <div className="header">
         <div className="logo">
           <img src={image_url} alt={name} />
@@ -68,7 +71,7 @@ const RatingItemWrapper = styled.div`
     .title {
       font-weight: 600;
       font-size: 26px;
-      color: #dcdedf;
+      color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
       margin: 30px 0 20px;
     }
     .rate {
@@ -79,8 +82,10 @@ const RatingItemWrapper = styled.div`
       margin-bottom: 20px;
     }
   }
-  color: #dcdedf;
-
+  color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
+  h2 {
+    color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
+  }
   .bonuses {
     list-style: none;
     dt {
@@ -98,7 +103,7 @@ const RatingItemWrapper = styled.div`
   }
   .link a {
     font-size: 28px;
-    background-color: #a60311;
+    background-color: ${(props) => (props.themeLight ? '#df3131' : '#a60311')};
     padding: 25px 465px;
     border-radius: 7px;
     color: white;

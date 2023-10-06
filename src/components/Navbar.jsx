@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../logo.png';
+import logoDark from '../logoDark.png';
 import { useTranslation } from 'react-i18next';
+import { useThemeContext } from '../context/ThemeContext';
 const Navbar = () => {
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
@@ -10,13 +12,26 @@ const Navbar = () => {
     setLang(lang);
     i18n.changeLanguage(lang);
   };
-
+  const { themeLight, setThemeLight } = useThemeContext();
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: light)');
+  useEffect(() => {
+    setThemeLight(prefersDarkScheme.matches);
+  }, []);
+  useEffect(() => {
+    document.body.style.backgroundColor = themeLight ? '#fff' : '#010101';
+  }, [themeLight]);
   return (
-    <NavbarWrapper>
+    <NavbarWrapper themeLight={themeLight}>
       <div className="navbar">
-        <Link className="logo" to="/">
-          <img src={logo} alt="UA.gamble" />
-        </Link>
+        <button
+          onClick={() => {
+            setThemeLight(!themeLight);
+          }}
+          className="logo"
+          to="/"
+        >
+          <img src={themeLight ? logoDark : logo} alt="UA.gamble" />
+        </button>
         <div className="links">
           <NavLink to="/casino">Казино</NavLink>
           <NavLink to="/mfo">МФО</NavLink>
@@ -56,8 +71,13 @@ const NavbarWrapper = styled.div`
     .logo {
       font-size: 26px;
       width: 10%;
+      background-color: transparent;
+      border: none;
     }
     .links {
+      a {
+        color: ${(props) => (props.themeLight ? '#000000' : '#f0f0f0')};
+      }
       display: flex;
       gap: 20px;
       font-size: 20px;
@@ -70,7 +90,7 @@ const NavbarWrapper = styled.div`
       width: 10%;
       text-align: end;
       .lang_btn {
-        color: #f0f0f0;
+        color: ${(props) => (props.themeLight ? '#010101' : '#f0f0f0')};
         border: 0;
         margin: 3px;
         transition: color 0.2s ease;

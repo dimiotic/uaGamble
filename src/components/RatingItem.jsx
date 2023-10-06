@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Stars from './Stars';
 import { FaCheckCircle } from 'react-icons/fa';
-const CasinoItem = ({ data }) => {
+const RatingItem = ({ data }) => {
   const { name, bonuses, url, license, rate, image_url } = data;
   return (
-    <CasinoItemWrapper>
+    <RatingItemWrapper>
       <div className="header">
         <div className="logo">
           <img src={image_url} alt={name} />
@@ -32,7 +32,7 @@ const CasinoItem = ({ data }) => {
               <p>{item}</p>
             </dt>
           ))}
-          <dt>{license}</dt>
+          {license && <dt>{license}</dt>}
         </dl>
       </div>
 
@@ -41,12 +41,12 @@ const CasinoItem = ({ data }) => {
           Перейти
         </a>
       </div>
-    </CasinoItemWrapper>
+    </RatingItemWrapper>
   );
 };
 
-export default CasinoItem;
-const CasinoItemWrapper = styled.div`
+export default RatingItem;
+const RatingItemWrapper = styled.div`
   width: 1100px;
   padding: 20px 20px 40px 20px;
   border-radius: 7px;
@@ -93,10 +93,13 @@ const CasinoItemWrapper = styled.div`
       }
     }
   }
+  .link {
+    margin-top: 20px;
+  }
   .link a {
     font-size: 28px;
     background-color: #a60311;
-    padding: 16px 120px;
+    padding: 25px 465px;
     border-radius: 7px;
     color: white;
     transition: background-color 0.2s ease;
@@ -108,9 +111,11 @@ const CasinoItemWrapper = styled.div`
     font-size: 14px;
     width: 95%;
     font-size: 18px;
+
     .logo {
       margin-right: 20px;
       img {
+        padding: 40px 0 0;
         width: 250px;
       }
       .title {
@@ -121,31 +126,6 @@ const CasinoItemWrapper = styled.div`
           font-size: 14px;
           margin: 2px;
         }
-      }
-    }
-    .link a {
-      padding: 10px 34px;
-    }
-  }
-  @media (max-width: 920px) {
-    width: 350px;
-    .header {
-      display: block;
-      height: 550px;
-      .logo {
-        img {
-          width: 300px;
-          height: 90px;
-        }
-        .title {
-          font-size: 24px;
-        }
-      }
-    }
-    .rate {
-      margin: 0;
-      p {
-        font-size: 14px;
       }
     }
     .link {
@@ -161,8 +141,38 @@ const CasinoItemWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 920px) {
+    width: 350px;
+    .header {
+      display: block;
+      height: 550px;
+      .logo {
+        img {
+          width: 300px;
+        }
+        .title {
+          font-size: 24px;
+        }
+      }
+    }
+    .rate {
+      margin: 0;
+      p {
+        font-size: 14px;
+      }
+    }
+    .link {
+    }
+  }
   @media (max-width: 820px) {
     width: 85%;
+    .header {
+      .logo {
+        img {
+          width: 350px;
+        }
+      }
+    }
     .link {
       width: 100%;
 
@@ -173,17 +183,29 @@ const CasinoItemWrapper = styled.div`
   @media (max-width: 500px) {
     .header {
       height: 400px;
-
+      margin-bottom: 50px;
       .logo {
+        width: 254px;
         .title {
           margin: 0;
         }
         img {
-          height: 40px;
-          width: 150px;
+          width: 250px;
         }
       }
+      .rate {
+        margin: 20px 0 0 0;
+      }
       font-size: 14px;
+    }
+  }
+  @media (max-width: 320px) {
+    .header {
+      .logo {
+        img {
+          width: 200px;
+        }
+      }
     }
   }
 `;

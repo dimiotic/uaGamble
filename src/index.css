@@ -9,12 +9,11 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #0c0c0c;
 }
 a {
   text-decoration: none;
   transition: color 0.2s ease;
-  color: #abc5cf;
+  color: #f9fbfc;
 }
 h1,
 h2,
@@ -22,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #abc5cf;
+  color: #f9fbfc;
 }
 a:hover {
   color: #a60311;

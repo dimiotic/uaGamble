@@ -1,3 +1,3 @@
-import CasinoItem from './CasinoItem';
+import RatingItem from './RatingItem';
 import Navbar from './Navbar';
-export { CasinoItem, Navbar };
+export { RatingItem, Navbar };

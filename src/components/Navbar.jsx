@@ -28,7 +28,6 @@ const Navbar = () => {
           >
             UA
           </button>
-          <h2>{i18n.language}</h2>
           <button
             onClick={() => handleLangChange('ru')}
             className={`lang_btn ${lang === 'ru' ? 'active' : ''}`}

@@ -74,7 +74,7 @@ const NavbarWrapper = styled.div`
         border: 0;
         margin: 3px;
         transition: color 0.2s ease;
-        font-size: 26px;
+        font-size: 17px;
         background-color: transparent;
       }
       .active {

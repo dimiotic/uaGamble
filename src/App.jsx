@@ -7,11 +7,11 @@ import { casinosRU, casinosUA, mfoRU, mfoUA } from './data';
 import styled from 'styled-components';
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   useEffect(() => {
     const lng = navigator.language;
     i18n.changeLanguage(lng);
-  }, []);
+  }, [i18n]);
   return (
     <Wrapper>
       <BrowserRouter>

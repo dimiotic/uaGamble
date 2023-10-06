@@ -37,7 +37,7 @@ const RatingItem = ({ data }) => {
       </div>
 
       <div className="link">
-        <a target="_blank" href={url}>
+        <a target="_blank" rel="noreferrer" href={url}>
           Перейти
         </a>
       </div>

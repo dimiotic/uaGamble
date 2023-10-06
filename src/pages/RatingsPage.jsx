@@ -5,13 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 const RatingsPage = ({ title, ua, ru }) => {
   const { t, i18n } = useTranslation();
-
   const [casinos, setCasinos] = useState(ru);
   useEffect(() => {
     if (i18n.language === 'uk') setCasinos(ua);
     else setCasinos(ru);
-    console.log('change');
-  }, [i18n.language, window.location.pathname]);
+  }, [i18n.language, ru, ua]);
 
   return (
     <Wrapper>

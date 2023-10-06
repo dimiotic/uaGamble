@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ErrorPage, CasinoPage, RatingsPage } from './pages';
+import { ErrorPage, CasinoPage, RatingsPage, HomePage } from './pages';
 import { Navbar } from './components';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index element={<h1>Hi</h1>} />
+          <Route index element={<HomePage />} />
           <Route
             path="/casino"
             element={

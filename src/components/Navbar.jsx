@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Navbar = () => {
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
-  const hadleLangChange = (lang) => {
+  const handleLangChange = (lang) => {
     setLang(lang);
     i18n.changeLanguage(lang);
   };
@@ -23,13 +23,14 @@ const Navbar = () => {
         </div>
         <div className="langs">
           <button
-            onClick={() => hadleLangChange('uk')}
+            onClick={() => handleLangChange('uk')}
             className={`lang_btn ${lang === 'uk' ? 'active' : ''}`}
           >
             UA
           </button>
+          <h2>{i18n.language}</h2>
           <button
-            onClick={() => hadleLangChange('ru')}
+            onClick={() => handleLangChange('ru')}
             className={`lang_btn ${lang === 'ru' ? 'active' : ''}`}
           >
             RU

@@ -134,7 +134,8 @@ const RatingItemWrapper = styled.div`
       }
     }
     .link {
-      background-color: #a60311;
+      background-color: ${(props) =>
+        props.themeLight ? '#df3131' : '#a60311'};
       padding: 0 20px;
       border-radius: 7px;
       display: flex;

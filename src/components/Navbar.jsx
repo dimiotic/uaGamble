@@ -119,6 +119,10 @@ const NavbarWrapper = styled.div`
       gap: 10px;
       margin: 0 40px;
       font-size: 20px;
+      a {
+        color: ${(props) => (props.themeLight ? '#000000' : '#f0f0f0')};
+      }
+
       .active {
         color: #df0b1d;
         text-decoration: underline;

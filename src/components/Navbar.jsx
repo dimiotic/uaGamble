@@ -16,7 +16,7 @@ const Navbar = () => {
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: light)');
   useEffect(() => {
     setThemeLight(prefersDarkScheme.matches);
-  }, []);
+  }, [setThemeLight, prefersDarkScheme.matches]);
   useEffect(() => {
     document.body.style.backgroundColor = themeLight ? '#fff' : '#010101';
   }, [themeLight]);

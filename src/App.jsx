@@ -8,13 +8,19 @@ import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const { i18n } = useTranslation();
+  const userPrefers = JSON.parse(localStorage.getItem('userPrefers'));
+
   useEffect(() => {
+    if (userPrefers) {
+      i18n.changeLanguage(userPrefers.lang);
+      return;
+    }
     const lng = navigator.language;
     if (lng === 'uk') i18n.changeLanguage(lng);
     else {
       i18n.changeLanguage('ru');
     }
-  }, [i18n]);
+  }, [i18n, userPrefers]);
   return (
     <ThemeProvider>
       <BrowserRouter>

@@ -7,19 +7,26 @@ import { useTranslation } from 'react-i18next';
 import { useThemeContext } from '../context/ThemeContext';
 const Navbar = () => {
   const { i18n } = useTranslation();
-  const [lang, setLang] = useState(i18n.language);
   const handleLangChange = (lang) => {
-    setLang(lang);
     i18n.changeLanguage(lang);
   };
   const { themeLight, setThemeLight } = useThemeContext();
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: light)');
+  const [userOptions, setUserOptions] = useState({
+    themeLight,
+    lang: i18n.language,
+  });
   useEffect(() => {
-    setThemeLight(prefersDarkScheme.matches);
-  }, [setThemeLight, prefersDarkScheme.matches]);
+    setUserOptions({
+      themeLight,
+      lang: i18n.language,
+    });
+  }, [themeLight, i18n.language]);
+  localStorage.setItem('userPrefers', JSON.stringify(userOptions));
+
   useEffect(() => {
     document.body.style.backgroundColor = themeLight ? '#fff' : '#1e1e1e';
   }, [themeLight]);
+
   return (
     <NavbarWrapper $themelight={themeLight}>
       <div className="navbar">
@@ -39,13 +46,13 @@ const Navbar = () => {
         <div className="langs">
           <button
             onClick={() => handleLangChange('uk')}
-            className={`lang_btn ${lang === 'uk' ? 'active' : ''}`}
+            className={`lang_btn ${i18n.language === 'uk' ? 'active' : ''}`}
           >
             UA
           </button>
           <button
             onClick={() => handleLangChange('ru')}
-            className={`lang_btn ${lang === 'ru' ? 'active' : ''}`}
+            className={`lang_btn ${i18n.language === 'ru' ? 'active' : ''}`}
           >
             RU
           </button>

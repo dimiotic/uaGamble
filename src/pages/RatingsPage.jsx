@@ -12,7 +12,6 @@ const RatingsPage = ({ title, ua, ru }) => {
     else setCasinos(ru);
   }, [i18n.language, ru, ua]);
   const { themeLight } = useThemeContext();
-  console.log(themeLight);
   return (
     <Wrapper $themelight={themeLight}>
       <h1>{t(title)}</h1>

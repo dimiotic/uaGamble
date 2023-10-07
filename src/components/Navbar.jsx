@@ -11,6 +11,7 @@ const Navbar = () => {
     i18n.changeLanguage(lang);
   };
   const { themeLight, setThemeLight } = useThemeContext();
+
   const [userOptions, setUserOptions] = useState({
     themeLight,
     lang: i18n.language,

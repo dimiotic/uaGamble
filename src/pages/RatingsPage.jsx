@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { RatingItem } from '../components';
 import { useTranslation } from 'react-i18next';
+import { useThemeContext } from '../context/ThemeContext';
 
 const RatingsPage = ({ title, ua, ru }) => {
   const { t, i18n } = useTranslation();
@@ -10,9 +11,10 @@ const RatingsPage = ({ title, ua, ru }) => {
     if (i18n.language === 'uk') setCasinos(ua);
     else setCasinos(ru);
   }, [i18n.language, ru, ua]);
-
+  const { themeLight } = useThemeContext();
+  console.log(themeLight);
   return (
-    <Wrapper>
+    <Wrapper $themelight={themeLight}>
       <h1>{t(title)}</h1>
       <div className="casinos">
         {casinos.map((item) => {
@@ -25,6 +27,9 @@ const RatingsPage = ({ title, ua, ru }) => {
 
 export default RatingsPage;
 const Wrapper = styled.main`
+  h1 {
+    color: ${(props) => (props.$themelight ? '#070707' : '#fdfdfd')};
+  }
   .casinos {
     margin-top: 50px;
   }

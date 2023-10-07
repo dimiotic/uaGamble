@@ -9,7 +9,7 @@ const RatingItem = ({ data }) => {
   const { themeLight } = useThemeContext();
 
   return (
-    <RatingItemWrapper themeLight={themeLight}>
+    <RatingItemWrapper $themelight={themeLight}>
       <div className="header">
         <div className="logo">
           <img src={image_url} alt={name} />
@@ -71,7 +71,7 @@ const RatingItemWrapper = styled.div`
     .title {
       font-weight: 600;
       font-size: 26px;
-      color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
+      color: ${(props) => (props.$themelight ? '#010101' : '#dcdedf')};
       margin: 30px 0 20px;
     }
     .rate {
@@ -82,9 +82,9 @@ const RatingItemWrapper = styled.div`
       margin-bottom: 20px;
     }
   }
-  color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
+  color: ${(props) => (props.$themelight ? '#010101' : '#dcdedf')};
   h2 {
-    color: ${(props) => (props.themeLight ? '#010101' : '#dcdedf')};
+    color: ${(props) => (props.$themelight ? '#010101' : '#dcdedf')};
   }
   .bonuses {
     list-style: none;
@@ -103,14 +103,14 @@ const RatingItemWrapper = styled.div`
   }
   .link a {
     font-size: 28px;
-    background-color: ${(props) => (props.themeLight ? '#df3131' : '#a60311')};
+    background-color: ${(props) => (props.$themelight ? '#df3131' : '#ce0213')};
     padding: 25px 465px;
     border-radius: 7px;
     color: white;
     transition: background-color 0.2s ease;
   }
   .link a:hover {
-    background-color: #72030c;
+    background-color: #ff3143;
   }
   @media (max-width: 1040px) {
     font-size: 14px;
@@ -135,7 +135,7 @@ const RatingItemWrapper = styled.div`
     }
     .link {
       background-color: ${(props) =>
-        props.themeLight ? '#df3131' : '#a60311'};
+        props.$themelight ? '#df3131' : '#ce0213'};
       padding: 0 20px;
       border-radius: 7px;
       display: flex;

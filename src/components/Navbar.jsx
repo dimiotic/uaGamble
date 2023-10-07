@@ -18,10 +18,10 @@ const Navbar = () => {
     setThemeLight(prefersDarkScheme.matches);
   }, [setThemeLight, prefersDarkScheme.matches]);
   useEffect(() => {
-    document.body.style.backgroundColor = themeLight ? '#fff' : '#010101';
+    document.body.style.backgroundColor = themeLight ? '#fff' : '#1e1e1e';
   }, [themeLight]);
   return (
-    <NavbarWrapper themeLight={themeLight}>
+    <NavbarWrapper $themelight={themeLight}>
       <div className="navbar">
         <button
           onClick={() => {
@@ -76,7 +76,7 @@ const NavbarWrapper = styled.div`
     }
     .links {
       a {
-        color: ${(props) => (props.themeLight ? '#000000' : '#f0f0f0')};
+        color: ${(props) => (props.$themelight ? '#000000' : '#f0f0f0')};
       }
       display: flex;
       gap: 20px;
@@ -90,7 +90,7 @@ const NavbarWrapper = styled.div`
       width: 10%;
       text-align: end;
       .lang_btn {
-        color: ${(props) => (props.themeLight ? '#010101' : '#f0f0f0')};
+        color: ${(props) => (props.$themelight ? '#010101' : '#f0f0f0')};
         border: 0;
         margin: 3px;
         transition: color 0.2s ease;
@@ -120,7 +120,7 @@ const NavbarWrapper = styled.div`
       margin: 0 40px;
       font-size: 20px;
       a {
-        color: ${(props) => (props.themeLight ? '#000000' : '#f0f0f0')};
+        color: ${(props) => (props.$themelight ? '#000000' : '#f0f0f0')};
       }
 
       .active {

@@ -40,10 +40,10 @@ const Navbar = () => {
         >
           <img src={themeLight ? logoDark : logo} alt="UA.gamble" />
         </button>
-        <div className="links">
+        {/* <div className="links">
           <NavLink to="/casino">Казино</NavLink>
           <NavLink to="/mfo">МФО</NavLink>
-        </div>
+        </div> */}
         <div className="langs">
           <button
             onClick={() => handleLangChange('uk')}
@@ -60,10 +60,10 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        <div className="links_bottom">
+        {/* <div className="links_bottom">
           <NavLink to="/casino">Казино</NavLink>
           <NavLink to="/mfo">МФО</NavLink>
-        </div>
+        </div> */}
       </div>
     </NavbarWrapper>
   );

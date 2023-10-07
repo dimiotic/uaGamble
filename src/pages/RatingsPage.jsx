@@ -20,6 +20,9 @@ const RatingsPage = ({ title, ua, ru }) => {
           return <RatingItem key={item.name} data={item} />;
         })}
       </div>
+      <div className="footer">
+        <p>{t('topCasino.footerText')}</p>
+      </div>
     </Wrapper>
   );
 };
@@ -32,11 +35,30 @@ const Wrapper = styled.main`
   .casinos {
     margin-top: 50px;
   }
+  .footer {
+    margin: 170px 20px;
+    width: 80%;
+    padding-bottom: 50px;
+
+    p {
+      line-height: 1.5;
+      font-size: 22px;
+      font-weight: 400;
+      color: #fdfdfd;
+    }
+  }
   @media (max-width: 920px) {
     .casinos {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+    }
+    .footer {
+      margin: 50px 15px;
+
+      P {
+        font-size: 18px;
+      }
     }
   }
   @media (max-width: 500px) {
@@ -46,6 +68,11 @@ const Wrapper = styled.main`
     }
     .casinos {
       margin-top: 20px;
+    }
+    .footer {
+      p {
+        font-size: 16px;
+      }
     }
   }
 `;

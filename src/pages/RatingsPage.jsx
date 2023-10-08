@@ -7,6 +7,7 @@ import { useThemeContext } from '../context/ThemeContext';
 const RatingsPage = ({ title, ua, ru }) => {
   const { t, i18n } = useTranslation();
   const [casinos, setCasinos] = useState(ru);
+
   useEffect(() => {
     if (i18n.language === 'uk') setCasinos(ua);
     else setCasinos(ru);
@@ -29,7 +30,8 @@ const RatingsPage = ({ title, ua, ru }) => {
 
 export default RatingsPage;
 const Wrapper = styled.main`
-  h1 {
+  h1,
+  p {
     color: ${(props) => (props.$themelight ? '#070707' : '#fdfdfd')};
   }
   .casinos {
@@ -44,7 +46,6 @@ const Wrapper = styled.main`
       line-height: 1.5;
       font-size: 22px;
       font-weight: 400;
-      color: #fdfdfd;
     }
   }
   @media (max-width: 920px) {

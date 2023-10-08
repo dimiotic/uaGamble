@@ -1,3 +1,6 @@
+import firstCasinoLogo from './casinoLogos/firstcasino.png';
+import slotokingLogo from './casinoLogos/slotoking.png';
+
 export const casinosRU = [
   {
     id: 0,
@@ -13,7 +16,7 @@ export const casinosRU = [
     ],
     url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
     rate: 5,
-    image_url: 'https://friso.com.ua/images/logo.svg',
+    image_url: firstCasinoLogo,
   },
   {
     id: 1,
@@ -28,8 +31,7 @@ export const casinosRU = [
     ],
     url: 'https://10075296.salatsmayonezom.com',
     rate: 4.5,
-    image_url:
-      'https://slotoking.ua/themes/slotoking/uploads/logo-project/Logo_base_162%D1%8528.svg',
+    image_url: slotokingLogo,
   },
 ];
 
@@ -48,7 +50,7 @@ export const casinosUA = [
     ],
     url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
     rate: 5,
-    image_url: 'https://friso.com.ua/images/logo.svg',
+    image_url: firstCasinoLogo,
   },
   {
     id: 1,
@@ -63,41 +65,40 @@ export const casinosUA = [
     ],
     url: 'https://10075296.salatsmayonezom.com',
     rate: 4.5,
-    image_url:
-      'https://slotoking.ua/themes/slotoking/uploads/logo-project/Logo_base_162%D1%8528.svg',
+    image_url: slotokingLogo,
   },
 ];
 
-export const mfoUA = [
-  {
-    id: 0,
-    name: 'CreditPlus',
-    bonuses: [
-      'Скидки до -99%',
-      'Просте оформлення',
-      'Перший кредит на сумму до 15 000 грн.',
-      'Гроші переводяться одразу',
-    ],
-    url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
-    rate: 4.3,
-    image_url:
-      'https://creditplus.ua/assets/uploads/files/icon_site/1621846775-53492.svg',
-  },
-];
+// export const mfoUA = [
+//   {
+//     id: 0,
+//     name: 'CreditPlus',
+//     bonuses: [
+//       'Скидки до -99%',
+//       'Просте оформлення',
+//       'Перший кредит на сумму до 15 000 грн.',
+//       'Гроші переводяться одразу',
+//     ],
+//     url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
+//     rate: 4.3,
+//     image_url:
+//       'https://creditplus.ua/assets/uploads/files/icon_site/1621846775-53492.svg',
+//   },
+// ];
 
-export const mfoRU = [
-  {
-    id: 0,
-    name: 'CreditPlus',
-    bonuses: [
-      'Скидки до -99%',
-      'Простое оформление',
-      'Первый кредит на сумму до 15 000 грн.',
-      'На карту деньги приходять сразу',
-    ],
-    url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
-    rate: 4.3,
-    image_url:
-      'https://creditplus.ua/assets/uploads/files/icon_site/1621846775-53492.svg',
-  },
-];
+// export const mfoRU = [
+//   {
+//     id: 0,
+//     name: 'CreditPlus',
+//     bonuses: [
+//       'Скидки до -99%',
+//       'Простое оформление',
+//       'Первый кредит на сумму до 15 000 грн.',
+//       'На карту деньги приходять сразу',
+//     ],
+//     url: 'https://1casinowin.com/auth/signup/?refcode=535d688b-d2be-401b-8567-3fc3c2835338&subid={{subid}}&clickid={{clickid}}',
+//     rate: 4.3,
+//     image_url:
+//       'https://creditplus.ua/assets/uploads/files/icon_site/1621846775-53492.svg',
+//   },
+// ];

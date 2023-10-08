@@ -3,7 +3,7 @@ import { ErrorPage, CasinoPage, RatingsPage, HomePage } from './pages';
 import { Navbar } from './components';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import { casinosRU, casinosUA, mfoRU, mfoUA } from './data';
+import { casinosRU, casinosUA } from './data';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
@@ -26,9 +26,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index element={<HomePage />} />
           <Route
-            path="/casino"
+            index
             element={
               <RatingsPage
                 title="topCasino.title"
@@ -37,12 +36,8 @@ function App() {
               />
             }
           />
-          <Route
-            path="/mfo"
-            element={<RatingsPage title="mfo.title" ua={mfoUA} ru={mfoRU} />}
-          />
+
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/casino/:name" element={<CasinoPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

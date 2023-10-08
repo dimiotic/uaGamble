@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Stars from './Stars';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -14,12 +13,7 @@ const RatingItem = ({ data }) => {
         <div className="logo">
           <img src={image_url} alt={name} />
 
-          <Link
-            to={`casino/${name.replace(' ', '-').toLowerCase()}`}
-            className="title"
-          >
-            {name}
-          </Link>
+          <h2 className="title">{name}</h2>
           <div className="rate">
             <Stars stars={rate} />
             <p>{rate}</p>

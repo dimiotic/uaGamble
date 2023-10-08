@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../logo.png';
 import logoDark from '../logoDark.png';

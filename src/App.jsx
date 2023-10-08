@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ErrorPage, CasinoPage, RatingsPage, HomePage } from './pages';
+import { ErrorPage, RatingsPage } from './pages';
 import { Navbar } from './components';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';

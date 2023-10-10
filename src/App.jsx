@@ -1,10 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ErrorPage, RatingsPage } from './pages';
-import { Navbar } from './components';
+import RatingsPage from './pages/RatingsPage';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { casinosRU, casinosUA } from './data';
 import { ThemeProvider } from './context/ThemeContext';
+import { Navbar } from './components';
 
 function App() {
   const { i18n } = useTranslation();
@@ -23,23 +22,8 @@ function App() {
   }, [i18n]);
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route
-            index
-            element={
-              <RatingsPage
-                title="topCasino.title"
-                ua={casinosUA}
-                ru={casinosRU}
-              />
-            }
-          />
-
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar />
+      <RatingsPage title="topCasino.title" ua={casinosUA} ru={casinosRU} />
     </ThemeProvider>
   );
 }

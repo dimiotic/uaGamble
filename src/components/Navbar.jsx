@@ -39,10 +39,7 @@ const Navbar = () => {
         >
           <img src={themeLight ? logoDark : logo} alt="UA.gamble" />
         </button>
-        {/* <div className="links">
-          <NavLink to="/casino">Казино</NavLink>
-          <NavLink to="/mfo">МФО</NavLink>
-        </div> */}
+
         <div className="langs">
           <button
             onClick={() => handleLangChange('uk')}
@@ -57,12 +54,6 @@ const Navbar = () => {
             RU
           </button>
         </div>
-      </div>
-      <div>
-        {/* <div className="links_bottom">
-          <NavLink to="/casino">Казино</NavLink>
-          <NavLink to="/mfo">МФО</NavLink>
-        </div> */}
       </div>
     </NavbarWrapper>
   );
@@ -81,17 +72,6 @@ const NavbarWrapper = styled.div`
       background-color: transparent;
       border: none;
     }
-    .links {
-      a {
-        color: ${(props) => (props.$themelight ? '#000000' : '#f0f0f0')};
-      }
-      display: flex;
-      gap: 20px;
-      font-size: 20px;
-      .active {
-        color: #df0b1d;
-      }
-    }
 
     .langs {
       width: 10%;
@@ -109,31 +89,11 @@ const NavbarWrapper = styled.div`
       }
     }
   }
-  .links_bottom {
-    display: none;
-  }
+
   @media (max-width: 820px) {
     .navbar {
       img {
         width: 150px;
-      }
-      .links {
-        display: none;
-      }
-    }
-    .links_bottom {
-      display: flex;
-      gap: 10px;
-      margin: 0 40px;
-      font-size: 20px;
-      a {
-        color: ${(props) => (props.$themelight ? '#000000' : '#f0f0f0')};
-      }
-
-      .active {
-        color: #df0b1d;
-        text-decoration: underline;
-        text-underline-offset: 5px;
       }
     }
   }
@@ -142,16 +102,6 @@ const NavbarWrapper = styled.div`
       img {
         width: 120px;
       }
-    }
-    .links_bottom {
-      margin: 0 40px 30px;
-      font-size: 18px;
-    }
-  }
-  @media (max-width: 320px) {
-    .links_bottom {
-      margin: 0 40px 30px;
-      font-size: 16px;
     }
   }
 `;
